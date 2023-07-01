@@ -1,0 +1,20 @@
+# permissions for end users to view hlfs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: hlf-viewer-role
+rules:
+- apiGroups:
+  - hlf.pkuidlabs.com
+  resources:
+  - hlfs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - hlf.pkuidlabs.com
+  resources:
+  - hlfs/status
+  verbs:
+  - get
